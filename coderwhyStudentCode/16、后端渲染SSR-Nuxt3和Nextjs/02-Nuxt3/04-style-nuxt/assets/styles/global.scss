@@ -1,0 +1,8 @@
+// @use "~/assets/styles/variables.scss" as *;
+// 也是全局样式
+$color: blue;
+
+.global-style2 {
+  color: $color;
+  // @include border();
+}

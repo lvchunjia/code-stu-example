@@ -1,0 +1,15 @@
+
+location / {
+  # root  html;
+  # index  index.html index.htm;
+  add_header Access-Control-Allow-Origin *
+  add_header Access-Control-Allow-Headers "Accept,Accept-Encoding,Accept-Language,
+  Connection,Content-Length,Content-Type,Host,Origin,Referer,User-Agent";
+  add_header Access-Control-Allow-Methods "GET,POST,PUT,OPTIONS";
+  add_header Access-Control-Allow-Credentials true;
+  if (Srequest_method ='OPTIONS'){
+    return 204;
+  }
+
+  proxy_pass http://localhost:8000;
+}
