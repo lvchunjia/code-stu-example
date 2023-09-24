@@ -1,0 +1,43 @@
+{
+  "name": "imooc-datav-libs-dev",
+  "version": "1.0.0",
+  "description": "imooc datav components library",
+  "main": "dist/imooc.datav.js",
+  "scripts": {
+    "tips": "// wc是代表监听变化随时准备重新打包",
+    "dev": "rollup -wc rollup.config.dev.js",
+    "build": "eslint ./src && rollup -c rollup.config.dev.js",
+    "build:prod": "eslint ./src && rollup -c rollup.config.prod.js",
+    "lint": "eslint ./src"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.16.11",
+    "@vue/compiler-sfc": "^3.0.0-beta.15",
+    "eslint": "^7.2.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "rollup": "^2.70.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^6.0.0-beta.6",
+    "sam-test-data": "^0.0.5",
+    "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.13",
+    "sam-test-data": "^0.0.5",
+    "uuid": "^8.3.2"
+  }
+}
