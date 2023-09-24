@@ -1,0 +1,5 @@
+<!--pages/cloud-database.wxml-->
+<button type="primary" bindtap="onAddDataTap">add</button>
+<button type="primary" bindtap="onDeleteDataTap">delete</button>
+<button type="primary" bindtap="onChangeDataTap">change</button>
+<button type="primary" bindtap="onSelectDataTap">select</button>

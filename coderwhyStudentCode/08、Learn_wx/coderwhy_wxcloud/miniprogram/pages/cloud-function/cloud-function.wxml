@@ -1,0 +1,8 @@
+<!--pages/cloud-function/cloud-function.wxml-->
+<text>pages/cloud-function/cloud-function.wxml</text>
+<button type="primary" bindtap="onPrimary">test</button>
+<button type="primary" bindtap="onSumTap">test1</button>
+
+<button type="primary" bindtap="onFetchTap">onFetchTap</button>
+
+<button type="primary" bindtap="onGetCode">onGetCode</button>

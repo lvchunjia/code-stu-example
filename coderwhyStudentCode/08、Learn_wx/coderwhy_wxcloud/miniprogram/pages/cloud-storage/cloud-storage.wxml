@@ -1,0 +1,10 @@
+<!--pages/cloud-storage/cloud-storage.wxml-->
+<text>pages/cloud-storage/cloud-storage.wxml</text>
+
+<image src="cloud://student-8g6uqj3pb5b79dd4.7374-student-8g6uqj3pb5b79dd4-1307781159/studentFile/微信图片_20230107110807.jpg" alt="" mode="widthFix" />
+
+<button type="primary" bindtap="onUploadTap">上传文件</button>
+<button type="primary" bindtap="onDownLoadTap">下载文件</button>
+<button type="primary" bindtap="onDelFileTap">删除文件</button>
+
+<button type="primary" bindtap="onTempFileTap">临时文件</button>
