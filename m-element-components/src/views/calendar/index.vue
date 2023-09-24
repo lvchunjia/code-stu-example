@@ -3,7 +3,7 @@
 </template>
 
 <script lang='ts' setup>
-import { DateClickArg } from '_@fullcalendar_interaction@5.10.1@@fullcalendar/interaction';
+import { DateClickArg } from '@fullcalendar/interaction';
 import { EventItem } from '../../components/calendar/src/types'
 import { ref } from 'vue';
 import { EventContentArg } from '@fullcalendar/core';

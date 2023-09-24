@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { ref } from "vue";
+import NavHeader from "./navHeader/index.vue";
+import NavSide from "./navSide/index.vue";
+
+let isCollapse = ref(false);
+</script>
+
 <template>
   <el-container>
     <el-aside width="auto">
@@ -14,17 +22,7 @@
   </el-container>
 </template>
 
-<script lang='ts' setup>
-import { ref } from 'vue'
-import NavHeader from './navHeader/index.vue'
-import NavSide from './navSide/index.vue'
-
-let isCollapse = ref(false)
-
-
-</script>
-
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-header {
   padding: 0;
   border-bottom: 1px solid #eee;
