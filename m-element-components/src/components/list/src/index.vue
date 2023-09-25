@@ -1,7 +1,38 @@
+<script lang="ts" setup>
+import { PropType } from "vue";
+import { ListOptions, ActionOptions, ListItem } from "./types";
+import { toLine } from "../../../utils";
+
+let props = defineProps({
+  // 列表的内容
+  list: {
+    type: Array as PropType<ListOptions[]>,
+    required: true,
+  },
+  // 操作的内容
+  actions: {
+    type: Array as PropType<ActionOptions[]>,
+    default: () => [],
+  },
+});
+let emits = defineEmits(["clickItem", "clickAction"]);
+
+let clickItem = (item: ListItem, index: number) => {
+  emits("clickItem", { item, index });
+};
+let clickAction = (item: ActionOptions, index: number) => {
+  emits("clickAction", { item, index });
+};
+</script>
+
 <template>
   <div class="list-tabs__item">
     <el-tabs>
-      <el-tab-pane v-for="(item, index) in list" :key="index" :label="item.title">
+      <el-tab-pane
+        v-for="(item, index) in list"
+        :key="index"
+        :label="item.title"
+      >
         <el-scrollbar max-height="300px">
           <div
             class="container"
@@ -9,27 +40,57 @@
             v-for="(item1, index1) in item.content"
             :key="index1"
           >
-            <div class="avatar" v-if="item1.avatar">
-              <el-avatar size="small" :src="item1.avatar"></el-avatar>
+            <div
+              class="avatar"
+              v-if="item1.avatar"
+            >
+              <el-avatar
+                size="small"
+                :src="item1.avatar"
+              ></el-avatar>
             </div>
+
             <div class="content">
-              <div v-if="item1.title" class="title">
+              <div
+                v-if="item1.title"
+                class="title"
+              >
                 <div>{{ item1.title }}</div>
-                <el-tag v-if="item1.tag" size="mini" :type="item1.tagType">{{ item1.tag }}</el-tag>
+                <el-tag
+                  v-if="item1.tag"
+                  size="mini"
+                  :type="item1.tagType"
+                  >{{ item1.tag }}</el-tag
+                >
               </div>
-              <div class="time" v-if="item1.desc">{{ item1.desc }}</div>
-              <div class="time" v-if="item1.time">{{ item1.time }}</div>
+
+              <div
+                class="time"
+                v-if="item1.desc"
+              >
+                {{ item1.desc }}
+              </div>
+              <div
+                class="time"
+                v-if="item1.time"
+              >
+                {{ item1.time }}
+              </div>
             </div>
           </div>
+
           <div class="actions">
             <div
               class="a-item"
-              :class="{ 'border': i !== actions.length }"
+              :class="{ border: i !== actions.length }"
               v-for="(action, i) in actions"
               :key="i"
               @click="clickAction(action, i)"
             >
-              <div class="a-icon" v-if="action.icon">
+              <div
+                class="a-icon"
+                v-if="action.icon"
+              >
                 <component :is="`el-icon-${toLine(action.icon)}`"></component>
               </div>
               <div class="a-text">{{ action.text }}</div>
@@ -41,34 +102,7 @@
   </div>
 </template>
 
-<script lang='ts' setup>
-import { PropType } from 'vue'
-import { ListOptions, ActionOptions, ListItem } from './types'
-import { toLine } from '../../../utils'
-let props = defineProps({
-  // 列表的内容
-  list: {
-    type: Array as PropType<ListOptions[]>,
-    required: true
-  },
-  // 操作的内容
-  actions: {
-    type: Array as PropType<ActionOptions[]>,
-    default: () => []
-  }
-})
-let emits = defineEmits(['clickItem', 'clickAction'])
-
-let clickItem = (item: ListItem, index: number) => {
-  emits('clickItem', { item, index })
-}
-let clickAction = (item: ActionOptions, index: number) => {
-  emits('clickAction', { item, index })
-}
-
-</script>
-
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .container {
   display: flex;
   align-items: center;

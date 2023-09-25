@@ -1,13 +1,13 @@
 export interface City {
-  id: number,
+  id: number;
   // 拼音
-  spell: string,
+  spell: string;
   // 名字
-  name: string
+  name: string;
 }
 
 export interface Province {
-  name: string,
-  data: string[],
-  id?: string
+  name: string;
+  data: string[];
+  id?: string;
 }
